@@ -1,4 +1,4 @@
-package com.kimambo.aoc;
+package com.kimambo.aoc2020;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -42,30 +42,6 @@ public class Day2 {
         }
     }
 
-    private List<String> getContents(String filePath) throws IOException {
-
-        List<String> contents = new ArrayList<>();
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-
-            String line = reader.readLine();
-            contents.add(line);
-
-            do {
-
-                line = reader.readLine();
-                if (line != null) {
-                    contents.add(line);
-                }
-
-            } while (line != null);
-
-        } catch (IOException e) {
-            // TODO: handle exception
-        }
-
-        return contents;
-    }
 
     public void Solve() {
 

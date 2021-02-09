@@ -1,4 +1,4 @@
-package com.kimambo.aoc;
+package com.kimambo.aoc2020;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,13 +9,13 @@ import java.util.logging.Logger;
 
 
 
-public class ResourceFileReader {
+public class ResourceFileReaderImpl implements ResourceFileReader {
     
     String resourceFilePath; 
 
-    private final static Logger Log = Logger.getLogger(ResourceFileReader.class.getName()); 
+    private final static Logger Log = Logger.getLogger(ResourceFileReaderImpl.class.getName()); 
 
-    public ResourceFileReader(String path){
+    public ResourceFileReaderImpl(String path){
         this.resourceFilePath = path; 
     }
     
@@ -33,6 +33,31 @@ public class ResourceFileReader {
                 line = reader.readLine();
                 if (line != null) {
                     contents.add(line);
+                }
+
+            } while (line != null);
+
+        } catch (IOException e) {
+            Log.info(e.getMessage());
+            throw e; 
+        }
+
+        return contents;
+    }
+
+    public String getAll() throws IOException {
+
+        String contents; 
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(this.resourceFilePath))) {
+
+            String line = reader.readLine();
+
+            do {
+
+                contents += reader.readLine();
+                if (line != null) {
+                    contents += line; 
                 }
 
             } while (line != null);

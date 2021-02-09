@@ -1,4 +1,4 @@
-package com.kimambo.aoc;
+package com.kimambo.aoc2020;
 
 import java.io.IOException;
 import java.security.InvalidParameterException;

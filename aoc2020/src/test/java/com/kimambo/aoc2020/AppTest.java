@@ -1,4 +1,4 @@
-package com.kimambo.aoc;
+package com.kimambo.aoc2020;
 
 import static org.junit.Assert.assertTrue;
 

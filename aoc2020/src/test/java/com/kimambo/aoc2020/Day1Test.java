@@ -1,6 +1,6 @@
-package com.kimambo.aoc;
+package com.kimambo.aoc2020;
 
-import com.kimambo.aoc.Day1;
+import com.kimambo.aoc2020.Day1;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
