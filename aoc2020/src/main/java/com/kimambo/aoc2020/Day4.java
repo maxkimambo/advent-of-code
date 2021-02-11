@@ -36,8 +36,8 @@ public class Day4 {
         List<HashMap<String, String>> passportData = new ArrayList<>();
         boolean next = false;
 
-        for (String line : contents) {
-            
+        for(int i=0; i < contents.size(); i++){
+            String line = contents.get(i); 
             if (next) {
                 passportDataSet = new ArrayList<>();
                 next = false;
@@ -46,6 +46,11 @@ public class Day4 {
                 passportDataSet.add(line);
             } else {
                 next = true;
+                passportData.add(extractPassportData(passportDataSet));
+            }
+
+            // add remaining items if file doesnt end with an empty line 
+            if (i == (contents.size() -1)) {
                 passportData.add(extractPassportData(passportDataSet));
             }
         }
@@ -71,20 +76,7 @@ public class Day4 {
 
     private boolean isValid(HashMap<String, String> pass, HashMap<String, Boolean> rules) {
 
-        // boolean isValid = true;
-
         return pass.keySet().containsAll(rules.keySet());
-
-        // for (String key : rules.keySet()) {
-        // boolean isRequired = rules.get(key);
-        // if (pass.get(key) == null && isRequired) {
-        // isValid = false;
-        // invalidPassports.add(pass);
-        // return isValid;
-        // }
-        // }
-
-        // return isValid;
     }
 
     private int Solve1(List<HashMap<String, String>> passports, HashMap<String, Boolean> rules) {

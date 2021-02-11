@@ -7,18 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-
-
 public class ResourceFileReaderImpl implements ResourceFileReader {
-    
-    String resourceFilePath; 
 
-    private final static Logger Log = Logger.getLogger(ResourceFileReaderImpl.class.getName()); 
+    String resourceFilePath;
 
-    public ResourceFileReaderImpl(String path){
-        this.resourceFilePath = path; 
+    private final static Logger Log = Logger.getLogger(ResourceFileReaderImpl.class.getName());
+
+    public ResourceFileReaderImpl(String path) {
+        this.resourceFilePath = path;
     }
-    
+
     public List<String> getContents() throws IOException {
 
         List<String> contents = new ArrayList<>();
@@ -39,34 +37,10 @@ public class ResourceFileReaderImpl implements ResourceFileReader {
 
         } catch (IOException e) {
             Log.info(e.getMessage());
-            throw e; 
+            throw e;
         }
 
         return contents;
     }
 
-    public String getAll() throws IOException {
-
-        String contents; 
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(this.resourceFilePath))) {
-
-            String line = reader.readLine();
-
-            do {
-
-                contents += reader.readLine();
-                if (line != null) {
-                    contents += line; 
-                }
-
-            } while (line != null);
-
-        } catch (IOException e) {
-            Log.info(e.getMessage());
-            throw e; 
-        }
-
-        return contents;
-    }
 }
