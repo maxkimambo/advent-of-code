@@ -24,5 +24,9 @@ public class App
         ResourceFileReader day4Resource = new ResourceFileReaderImpl(resources + "Day4.txt"); 
         Day4 d4 = new Day4(day4Resource); 
         d4.Solve(); 
+
+        ResourceFileReader day5Resource = new ResourceFileReaderImpl(resources + "Day5.txt"); 
+        Day5 d5 = new Day5(day5Resource); 
+        d5.Solve(); 
     }
 }

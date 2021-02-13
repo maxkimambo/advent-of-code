@@ -172,7 +172,7 @@ public class Day4 {
             // }
         }
 
-        return validPassports.size();
+        return validPassports.size(); 
     }
 
     private boolean validateYearRange(int low, int high, String yearValue) {
