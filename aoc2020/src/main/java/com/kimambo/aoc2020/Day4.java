@@ -109,7 +109,7 @@ public class Day4 {
 
     private boolean validateHeight(String hgt) {
 
-        boolean validFormat = hgt.matches("^\\d+cm|in");
+        boolean validFormat = hgt.matches("^\\d+(cm|in)");
 
         if (!validFormat) {
             return false;
