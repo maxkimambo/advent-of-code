@@ -6,6 +6,7 @@ public class App
     public static void main( String[] args )
     {
 
+        // TODO: use a relative path (don't hardcode absolute path)
         String resources = "/Users/kimambo/dev/github.com/maxkimambo/codekatas/aoc/aoc2020/resources/";
         ResourceFileReader day1Resource = new ResourceFileReaderImpl(resources + "Day1.txt"); 
         Day1 d1 = new Day1(day1Resource); 
