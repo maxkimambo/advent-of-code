@@ -203,6 +203,7 @@ public class Day4 {
         // validationRules.put("cid", false);
 
         int result = Solve1(taskInput, validationRules);
+        System.out.println("------------- Day 4 ---------------");
         System.out.println("Valid passports => " + result);
 
         int result2 = Solve2(taskInput, validationRules);

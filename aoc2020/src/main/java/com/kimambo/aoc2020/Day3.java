@@ -127,8 +127,6 @@ public class Day3 {
             }
         }
 
-        System.out.println("Tree count " + treeCount);
-
         return treeCount;
     }
 
